@@ -44,7 +44,10 @@ const Account = () => {
       });
     } else {
       axios
-        .post("https://concerned-eel-battledress.cyclic.app/api/register", user)
+        .post(
+          "https://concerned-eel-battledress.cyclic.app/api/register",
+          user
+        )
         .then((res) => {
           console.log(res.data);
           if (res.data.msg === "User registered successfully") {
