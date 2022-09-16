@@ -103,7 +103,8 @@ const Cart = () => {
                   <div className="cart-product">
                     <img
                       src={
-                        "http://localhost:4000/productImage/" + cartItem.image
+                        "https://concerned-eel-battledress.cyclic.app/productImage/" +
+                        cartItem.image
                       }
                       alt={cartItem.name}
                     />
