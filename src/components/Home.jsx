@@ -28,7 +28,10 @@ const Home = () => {
     if (cdata === null || cdata === undefined || cdata === "") {
       navigate("/account");
     } else {
-      const response = await axios.post("/api/profile", jsonData);
+      const response = await axios.post(
+        "https://concerned-eel-battledress.cyclic.app/api/profile",
+        jsonData
+      );
       try {
         console.log(response.data);
         if (response.data.msg === "Profile") {
@@ -45,7 +48,9 @@ const Home = () => {
   };
 
   const fetchProducts = async () => {
-    const response = await axios.get("/api/get/allproduct");
+    const response = await axios.get(
+      "https://concerned-eel-battledress.cyclic.app/api/get/allproduct"
+    );
     try {
       setData(response.data.data);
       setDatas(response.data.data);
@@ -63,7 +68,6 @@ const Home = () => {
     setSearch(e.target.value);
   };
 
-  
   const filteredCoins = datas.filter((coin) =>
     coin.title.toLowerCase().includes(search.toLowerCase())
   );

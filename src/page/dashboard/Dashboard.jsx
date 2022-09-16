@@ -20,7 +20,10 @@ const UseComp = ({
       <div className="row">
         <div className="col-md-3">
           <img
-            src={"http://localhost:4000/productImage/" + image}
+            src={
+              "https://concerned-eel-battledress.cyclic.app/productImage/" +
+              image
+            }
             alt="product"
             className="img-fluid w-25"
           />
@@ -66,7 +69,9 @@ const Dashboard = () => {
   const [data, setData] = React.useState([]);
 
   const fetchData = async () => {
-    const response = await axios.get("/api/get/allproduct");
+    const response = await axios.get(
+      "https://concerned-eel-battledress.cyclic.app/api/get/allproduct"
+    );
 
     try {
       const datas = response.data.data;
@@ -91,7 +96,10 @@ const Dashboard = () => {
     formdata.append("category", prod.category);
     formdata.append("amount", prod.amount);
     formdata.append("image", $("#prodImage")[0].files[0]);
-    const response = await axios.post("/api/add/product", formdata);
+    const response = await axios.post(
+      "https://concerned-eel-battledress.cyclic.app/api/add/product",
+      formdata
+    );
     try {
       console.log(response.data);
       if (response.data.msg === "Product Added") {
@@ -114,10 +122,13 @@ const Dashboard = () => {
       id: id,
     };
     console.log(jsonData);
-    const removeIt = await axios.delete("/api/delete/product", {
-      data: jsonData,
-      method: "DELETE",
-    });
+    const removeIt = await axios.delete(
+      "https://concerned-eel-battledress.cyclic.app/api/delete/product",
+      {
+        data: jsonData,
+        method: "DELETE",
+      }
+    );
     try {
       console.log(removeIt.data);
       if (removeIt.data.msg === "Product Deleted") {
@@ -138,7 +149,9 @@ const Dashboard = () => {
     console.log(id);
     $("#EditsingleProducts").css("display", "block");
     sessionStorage.setItem("id", id);
-    const response = await axios.get("/api/get/singleproduct/" + id);
+    const response = await axios.get(
+      "https://concerned-eel-battledress.cyclic.app/api/get/singleproduct/" + id
+    );
     try {
       const data = response.data.data;
       setEprod({
@@ -149,7 +162,8 @@ const Dashboard = () => {
 
       $("#editimg").attr(
         "src",
-        "http://localhost:4000/productImage/" + data.image
+        "https://concerned-eel-battledress.cyclic.app/productImage/" +
+          data.image
       );
       console.log(data);
     } catch (err) {
@@ -165,7 +179,10 @@ const Dashboard = () => {
     formdata.append("amount", eprod.amount);
     formdata.append("image", $("#editImage")[0].files[0]);
     formdata.append("id", sessionStorage.getItem("id"));
-    const response = await axios.patch("/api/update/product", formdata);
+    const response = await axios.patch(
+      "https://concerned-eel-battledress.cyclic.app/api/update/product",
+      formdata
+    );
     try {
       console.log(response.data);
       if (response.data.msg === "Product Updated") {

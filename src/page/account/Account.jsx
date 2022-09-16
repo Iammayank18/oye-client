@@ -44,7 +44,7 @@ const Account = () => {
       });
     } else {
       axios
-        .post("/api/register", user)
+        .post("https://concerned-eel-battledress.cyclic.app/api/register", user)
         .then((res) => {
           console.log(res.data);
           if (res.data.msg === "User registered successfully") {
@@ -112,7 +112,10 @@ const Account = () => {
       return;
     } else {
       axios
-        .post("/api/login", loggedIn)
+        .post(
+          "https://concerned-eel-battledress.cyclic.app/api/login",
+          loggedIn
+        )
         .then((res) => {
           console.log(res.data);
           console.log(res.data.data.role);

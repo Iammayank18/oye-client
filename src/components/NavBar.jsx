@@ -33,7 +33,9 @@ const NavBar = () => {
     sessionStorage.removeItem("login");
     sessionStorage.removeItem("logtoken");
     // window.location.reload();
-    const getRes = await axios.get("/api/logout");
+    const getRes = await axios.get(
+      "https://concerned-eel-battledress.cyclic.app/api/logout"
+    );
     try {
       const response = getRes.data;
       console.log(response);

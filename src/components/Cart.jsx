@@ -24,7 +24,10 @@ const Cart = () => {
     if (cdata === null || cdata === undefined || cdata === "") {
       navigate("/account");
     } else {
-      const response = await axios.post("/api/profile", jsonData);
+      const response = await axios.post(
+        "https://concerned-eel-battledress.cyclic.app/api/profile",
+        jsonData
+      );
       try {
         console.log(response.data.msg);
         if (response.data.msg === "Profile") {
