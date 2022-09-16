@@ -95,7 +95,7 @@ const Dashboard = () => {
     formdata.append("price", prod.price);
     formdata.append("category", prod.category);
     formdata.append("amount", prod.amount);
-    formdata.append("image", "backend/public/productImage/9.jpeg");
+    formdata.append("image", $("#prodImage")[0].files[0]);
     const response = await axios.post(
       "https://concerned-eel-battledress.cyclic.app/api/add/product",
       formdata
