@@ -21,12 +21,9 @@ const UseComp = ({
         <div className="col-md-3">
           <img
             src={
-              "https://concerned-eel-battledress.cyclic.app/productImage/9.jpeg"
+              "https://concerned-eel-battledress.cyclic.app/productImage/" +
+              image
             }
-            // src={
-            //   "https://concerned-eel-battledress.cyclic.app/productImage/" +
-            //   image
-            // }
             alt="product"
             className="img-fluid w-25"
           />
@@ -165,13 +162,9 @@ const Dashboard = () => {
 
       $("#editimg").attr(
         "src",
-        "https://concerned-eel-battledress.cyclic.app/productImage/9.jpeg"
+        "https://concerned-eel-battledress.cyclic.app/productImage/" +
+          data.image
       );
-      // $("#editimg").attr(
-      //   "src",
-      //   "https://concerned-eel-battledress.cyclic.app/productImage/" +
-      //     data.image
-      // );
       console.log(data);
     } catch (err) {
       console.log(err);

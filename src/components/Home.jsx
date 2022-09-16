@@ -164,7 +164,10 @@ const Home = () => {
                 >
                   <h3>{product.title}</h3>
                   <img
-                    src={"http://localhost:4000/productImage/" + product.image}
+                    src={
+                      "https://concerned-eel-battledress.cyclic.app/productImage/" +
+                      product.image
+                    }
                     alt={product.name}
                     className="card-img-top"
                   />
