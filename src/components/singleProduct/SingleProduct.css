@@ -1,0 +1,21 @@
+.showproduct {
+  display: none;
+  position: fixed;
+  z-index: 999999999999;
+  left: calc(50% - 25%);
+  top: 139px;
+  width: 50%;
+  height: auto;
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+  background-color: rgb(255 255 255);
+  padding: 10px;
+  margin: auto;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+#editimg {
+  width: 74%;
+  border-radius: 6px;
+}

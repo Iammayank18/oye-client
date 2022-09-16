@@ -1,0 +1,17 @@
+.header__bar {
+  padding: 0 !important;
+  padding-inline-start: 0 !important;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+}
+.cart {
+  font-size: 19px;
+  padding: 25px 17px 0 10px;
+}
+
+#logut {
+  display: none;
+}
+
+
